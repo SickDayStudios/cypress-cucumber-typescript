@@ -1,8 +1,5 @@
-import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
+import { When } from '@badeball/cypress-cucumber-preprocessor';
 
-Given("I am on the {string} page", (page: string) => {
-  cy.visit(`/${page}`);
-});
 
 When("I click the {string} button", (buttonText: string) => {
   cy.get('button').contains(buttonText).click();
@@ -26,8 +23,4 @@ When("I check the {string} checkbox", (checkboxLabel: string) => {
 
 When("I uncheck the {string} checkbox", (checkboxLabel: string) => {
   cy.get(`input[type="checkbox"][name="${checkboxLabel}"]`).uncheck();
-});
-
-Then("I should see the {string} button", (buttonName: string) => {
-  cy.get('button').contains(buttonName).should("be.visible");
 });
