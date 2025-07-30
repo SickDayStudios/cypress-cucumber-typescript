@@ -1,4 +1,4 @@
-Feature: Example feature to demonstrate Cypress with Cucumber
+Feature: Login
 
     Background:
         
