@@ -24,3 +24,11 @@ When("I check the {string} checkbox", (checkboxLabel: string) => {
 When("I uncheck the {string} checkbox", (checkboxLabel: string) => {
   cy.get(`input[type="checkbox"][name="${checkboxLabel}"]`).uncheck();
 });
+
+When("I select the {string} radio button", (radioLabel: string) => {
+  cy.get(`input[type="radio"][name="${radioLabel}"]`).check();
+});
+
+When("I upload a file to the {string} input", (inputName: string) => {
+  cy.get(`input[type="file"][name="${inputName}"]`).selectFile('../support/data/file.txt');
+});
